@@ -12,6 +12,9 @@ const Card = ({ data }) => {
   return (
     <div className="mx-auto bg-white cursor-pointer w-56 h-60">
       <figure className="relative mb-2 w-full h-4/5">
+        <span className="absolute bottom-2 left-2 bg-white/60 rounded-lg px-2 text-xs font-semibold">
+          {data.category.name.toUpperCase()}
+        </span>
         {imageSrc ? (
           <img
             src={imageSrc}
