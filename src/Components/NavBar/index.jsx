@@ -2,7 +2,7 @@ import NavLinkItem from "./NavLinkItem";
 
 const NavBar = () => {
   return (
-    <nav className="flex justify-between items-center w-full py-6 px-8 text-sm">
+    <nav className="flex justify-between items-center max-w-5xl py-6 px-8 text-sm">
       <ul className="flex items-center gap-3">
         <li className="font-bold">
           <a href="/">Magia&Cardistry</a>

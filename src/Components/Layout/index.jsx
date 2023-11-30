@@ -2,9 +2,9 @@ import NavBar from "../NavBar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="max-w-5xl mx-auto">
       <NavBar />
-      <main className="flex flex-col items-center mt-5">{children}</main>
+      <main className="px-8 py-2">{children}</main>
     </div>
   );
 };

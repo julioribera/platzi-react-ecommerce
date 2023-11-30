@@ -1,22 +1,34 @@
-const Card = () => {
+import ImgPlaceholder from "./ImgPlaceholder";
+
+const Card = ({ data }) => {
+  if (!data) return null;
+
+  const isValidImageUrl = (url) => {
+    return /\.(jpg|jpeg|png|gif|bmp|svg)$/i.test(url);
+  };
+
+  const imageSrc = isValidImageUrl(data.images[0]) ? data.images[0] : null;
+
   return (
-    <div className="bg-white cursor-pointer w-56 h-60">
+    <div className="mx-auto bg-white cursor-pointer w-56 h-60">
       <figure className="relative mb-2 w-full h-4/5">
-        <span className="absolute bottom-2 left-2 bg-white/60 rounded-lg px-2 text-xs font-semibold">
-          BARAJA
-        </span>
-        <img
-          src="https://magiaycardistry.com/wp-content/uploads/Comprar-barajas-de-cartas-Bicycle-Standard-al-mejor-precio.jpg"
-          alt="Bicycle Standard"
-          className="w-full h-full rounded-lg object-cover"
-        />
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            onError={(e) => (e.target.src = "")}
+            alt={data.title}
+            className="w-full h-full rounded-lg object-cover"
+          />
+        ) : (
+          <ImgPlaceholder />
+        )}
         <div className="absolute top-2 right-2 flex justify-center items-center bg-white w-6 h-6 rounded-full">
           <span style={{ transform: "translateY(-2px)" }}>+</span>
         </div>
       </figure>
       <p>
-        <span>Bicycle Standard</span>
-        <span>5€</span>
+        <span>{data.title}</span>
+        <span>{`${(data.price / 100).toFixed(2)}€`}</span>
       </p>
     </div>
   );
