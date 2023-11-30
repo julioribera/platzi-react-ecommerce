@@ -1,16 +1,19 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import { ShoppingCartProvider } from "../../Context";
 import Layout from "../../Components/Layout";
 import AppRoutes from "./AppRoutes";
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import React from "react";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Layout>
-        <AppRoutes />
-      </Layout>
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </BrowserRouter>
+    </ShoppingCartProvider>
   );
 };
 
