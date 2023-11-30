@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 
-const CartIcon = () => {
+const CartIcon = ({ onClick }) => {
   const { shoppingCart } = useContext(ShoppingCartContext);
   const itemCount = shoppingCart.reduce(
     (total, item) => total + item.quantity,
@@ -9,7 +9,7 @@ const CartIcon = () => {
   );
 
   return (
-    <li>
+    <li onClick={onClick} className="cursor-pointer">
       <span>🛒</span>
       <span>{itemCount}</span>
     </li>
