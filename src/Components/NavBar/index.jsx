@@ -1,3 +1,4 @@
+import CartIcon from "./CartIcon";
 import NavLinkItem from "./NavLinkItem";
 
 const NavBar = () => {
@@ -17,6 +18,7 @@ const NavBar = () => {
         <NavLinkItem to="/my-orders">My Orders</NavLinkItem>
         <NavLinkItem to="/my-account">My Account</NavLinkItem>
         <NavLinkItem to="/sign-in">Sign In</NavLinkItem>
+        <CartIcon />
       </ul>
     </nav>
   );
