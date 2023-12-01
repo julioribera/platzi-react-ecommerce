@@ -20,7 +20,7 @@ export const ProductDetail = ({product, onClose}) => {
         <div className="p-6">
           <h1 className="font-semibold mb-2">{product.title}</h1>
           <h2 className="text-xl font-bold text-gray-800 mb-3">
-            {product.price}
+            {product.price}€
           </h2>
           <p className="text-gray-600">{product.description}</p>
           <button
