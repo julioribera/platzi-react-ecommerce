@@ -1,8 +1,10 @@
 import {useContext} from "react";
 import {ShoppingCartContext} from "../../Context";
+import {useCheckout} from "../../Context/checkout";
 
 export const CartDetail = ({onClose}) => {
   const {shoppingCart} = useContext(ShoppingCartContext);
+  const checkout = useCheckout();
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
@@ -45,7 +47,9 @@ export const CartDetail = ({onClose}) => {
               )}€`}</span>
             </div>
             <button
-              onClick={onClose}
+              onClick={() => {
+                checkout();
+              }}
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 transition">
               Pagar
             </button>
